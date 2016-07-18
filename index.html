@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>鸟币开源协议</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">鸟币开源协议 <a href="http://niaobi.org">niaobi.org</a></h1>
+
+<p><strong>鸟币开源协议</strong>是一套完全公开源码的交易规则。  </p>
+
+<p>&mdash;&gt;人人都可以发现其中谬误从而让它更加完善<br>
+&mdash;&gt;人人都可以基于这套协议制作鸟币系统(移动应用、网站等)<br>
+&mdash;&gt;鸟币经济系统的出现旨在帮助人类逐渐摆脱几千年以来的互相奴役  </p>
+
+<h2 id="toc_1">时代背景</h2>
+
+<h3 id="toc_2">注意，高能开启</h3>
+
+<h5 id="toc_3">国家如何通过货币奴役人民？</h5>
+
+<p>简单来说，就是让<strong>分大于合</strong> <sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>，不断制造分裂与竞争；而不是<strong>合大于分</strong> <sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup>、创造光与爱。</p>
+
+<div><pre><code class="language-none">第一步：钱被凭空造了出来
+第二步：以借贷方式发行  
+第三步：所有的钱永远小于还款加上利息的总和  
+第四步：系统不得不重复第一步、第二步、第三步</code></pre></div>
+
+<p>所以这就是一个不断的自我分裂的、无法合一的<mark>癌症系统</mark>  </p>
+
+<p>具体来说：<br>
+钱被凭空造出来的时候，就相当于从所有人的口袋里偷走了钱，<br>
+人们感觉不到被偷，是因为自己的<mark><strong>钱的多少表面看起来并没变化</strong></mark>，<br>
+变化的是手里的钱的相对数量，也就是购买力，<br>
+而购买力下降在人们看来，只会感性地以为是卖家涨价了。  </p>
+
+<p>此时小偷偷多少钱还是由小偷的主观决定的，小偷如果愿意少偷点钱，<br>
+社会会很自然地走向繁荣，所以中国古代有过盛世。<br>
+可惜100多年前近现代银行出现之后，此系统就开始变成一个穷凶极恶的癌症系统。    </p>
+
+<p><mark><strong>近现代银行的核心诡计，就是把偷来的钱借出去</strong></mark></p>
+
+<p>不要以为银行是把别人存的钱借给你，贷款的钱<strong>都是凭空造出来的，也就是偷来的钱</strong>。<br>
+把偷来的钱借出去，能充分确保虚拟的数字变成了真实的劳动，因为<strong>借款人要想还钱，就必须干活</strong>。<br>
+当借款人把钱一点一点还回去的时候，看不见的奴役早已完成了。<br>
+而借款人只能看到欠债还钱，看不到<strong>空手套白狼！</strong>  </p>
+
+<p><u>既在奴役借款人的同时偷了所有人的钱！</u><br>
+<u>又用偷取来的所有人的钱来奴役借款人！</u><br>
+<mark>这是多么聪明的奴役系统！奴隶制几千年来其实一直没有变过。</mark></p>
+
+<p>例如中国，80年代的货币总量是<em>1600亿</em>，到2015年竟然已经高达<em>1400000亿</em>。<br>
+这相当于99.9%的货币，都是银行凭空造出来的债务。  </p>
+
+<p>这意味着：  </p>
+
+<ol>
+<li><strong>人民币35年贬值了<em>900倍</em>，</strong>借款人和其他所有人<strong>都是被奴役的对象</strong>。<br>
+所以<mark>个人财富难以累积</mark>，年轻的时候存的900万，老了只能当1万块钱用。</li>
+<li><strong>这<em>140万亿</em>，全都是中央银行借给人民的</strong>！国家才是终极债主啊！</li>
+<li>你说你没借？那只不过是没直接借给你而已。<br>
+有可能是借给了你的老板，或者你的顾客。<br>
+你手里的钱全是别人欠国家的债～</li>
+</ol>
+
+<p>平均到中国的5亿中年人，在2015年每人还欠着国家30万的债务，<br>
+不得不日复一日看不到尽头的去劳动。<br>
+35年以来，人民的债务<strong>从来没有还清过</strong>！（所以你知道自己过得<mark>苦逼的原因</mark>了）<br>
+而且注意，到最后，这些钱也<strong>永远不可能还清</strong>！  (还将继续苦逼。。)</p>
+
+<p>因为第三步说了：<strong><u>市场上存在的所有的钱永远小于还款加上利息的总和</u></strong>。    </p>
+
+<p>为了帮人们还债，银行不得不发行更多的钱。<br>
+这时癌细胞开始开始扩散，<strong>拆了东墙补西墙、寅吃卯粮、恶性循环</strong>。<br>
+最终把人们的劳动力都透支完也还不上的时候，癌症就到了晚期。<br>
+<strong>开放二胎、搞垮股市、分期还款打8折、贷款超低利息</strong>等等，都是治标不治本。</p>
+
+<p>统治者的悖论就在于，当他把人都变成奴隶之后，奴隶就变成了他的癌症病毒。</p>
+
+<p>这就是鸟币产生的时代背景。<br>
+无论现状如何，更重要的是，路已经有了，那就是鸟币。  </p>
+
+<p>终于读完了？还好有鸟币压压惊。</p>
+
+<h2 id="toc_4">基本概念、鸟币模型</h2>
+
+<h3 id="toc_5">1.经济</h3>
+
+<p>&mdash;&gt;本质上是一种基于个人才智的交换</p>
+
+<h3 id="toc_6">2.货币</h3>
+
+<p>&mdash;&gt;本质上是一种交换未完成时的信物</p>
+
+<h3 id="toc_7">3.鸟币是什么？</h3>
+
+<p>&mdash;&gt;鸟币是基于移动互联网的点对点自由货币<br>
+&mdash;&gt;参考鸟币的故事可以让你从感性维度理解鸟币<br>
+在鸟币系统中，<q>鸟币</q>是对鸟币系统中所有用户发行的各种不同货币的总代称，<br>
+每个人都可以在鸟币系统中发行属于自己的唯一名称的货币。  </p>
+
+<h3 id="toc_8">鸟币的故事</h3>
+
+<div><pre><code class="language-none">5000年前，人们使用贝壳、羽毛和石头作为交易时的信物。
+每个人都有属于自己的独一无二的贝壳、在某个小型部落里流通。
+无论谁获得了你的贝壳，
+都意味着他可以拿着你的贝壳来找你办某件事情。
+比如猎杀野猪、采集浆果、种玉米等等。
+你若拥有良好的信用和高超的狩猎技能，
+此贝壳也就成了部落争相收藏的宝“贝”！
+直到黄帝统一了各个部落，
+开始使用统一的货币，这种交易方式才渐渐消失。
+现在，鸟币正在重新开启这项古老而神秘的技能。
+因为终于发现，移动互联网不仅可以让它重生，
+而且给了所有人一个重获自由的机会！
+与其当条狗，不如叼只扇贝做只鸟。
+故美名其曰：鸟币。</code></pre></div>
+
+<p><strong>鸟币模型最大限度的还原了经济和货币的本质</strong>：<br>
+A与B两人，A支付B鸟币a，B给A提供某项技能，鸟币a代表了A承诺未来会兑现某项技能。<br>
+随后B拿着鸟币a找A购买某项技能，A接受了，则鸟币a被A回收，一个完整的交易结束。<br>
+若A没有回收自己发行的鸟币a，那么则失信于B，鸟币信用也就降低。<br>
+而鸟币信用将影响到A之后与其他人的交易。  </p>
+
+<p><strong>鸟币只系统需要两个人就可以实现</strong>。<br>
+而中央发行货币，最少需要3方：2个互不信任的人和可信任的第三方发行机构。<br>
+但是，只要说到货币，那就离不开<q>信任</q>、<q>信用</q>，这是最根本的（参考第2条货币的定义）<br>
+所以即使是3方，那么也是2个互不信任的人和一个这两个人<q>信任的</q>第三方。<br>
+回归本质，既然<strong>货币永远离不开<q>信任</q>二字</strong>，<br>
+可见鸟币才是<mark>最简洁的经济模型</mark>，只需要2个人就能实现，不需要第三方。  </p>
+
+<p>人们会觉得：<q>我只需要赚到人民币，然后用人民币就可以买到任何东西，不是更简单？</q><br>
+这种想法只不过是为了让你错误的定义钱，<br>
+人的大脑一旦形成了某个定义的时候，就会认为它是真的，就很难转变。  </p>
+
+<p>这样说吧，按照货币和经济的定义，<u>钱本来是不一定能买到任何东西的</u>。<br>
+而社会却实现了钱能买到任何东西的妄想，背后是以99%的人被奴役作为代价的。<br>
+并且，中央银行发行货币，从客观的数学模型上来说，也完全不可信，开头已经说过了。  </p>
+
+<h3 id="toc_9">4.超级鸟币是什么？</h3>
+
+<p>&mdash;&gt;普通鸟币的<strong>本质是债务</strong>，超级鸟币的<strong>本质是真爱</strong>。<br>
+超级鸟币每单交易数量为1个。<br>
+<strong><mark>用超级鸟币创造一个免费的、协作共享的、人人都沉浸在喜爱的事情中的世界吧</mark></strong>！  </p>
+
+<p>奴役出现的源头在哪里？那就是人的心。当巨量的债务出现的时候，奴役自然就出现了。<br>
+<code>奴役(巨量的债务)</code>&lt;&mdash;<code>等价交换(正常的债务)</code>&mdash;&gt;<code>发光(不求回报的爱)</code><br>
+超级鸟币的选项在于告诉人们，人类世界是否发光发亮取决于我们选择什么。  </p>
+
+<h3 id="toc_10">5.鸟币回流是什么？</h3>
+
+<p>&mdash;&gt;鸟币回流，即<strong>发行者回收鸟币</strong>  </p>
+
+<p>例如：<br>
+我发行了100个喵喵币给小明，<br>
+并且承诺这100个喵喵币可以兑换我的1项技能为<q>冥想教学半小时</q>。<br>
+10天后小明拿着这100个喵喵币，找我兑现当初说好的教他冥想。<br>
+这里的兑现承诺，就是鸟币回流。  </p>
+
+<p>每当发行者修改或者发布一项技能时，其鸟币版本也会自动+1。<br>
+鸟币回流有3种兑现方式：  </p>
+
+<ol>
+<li>发行者提供最新版本的技能、服务<br></li>
+<li>发行者提供对应鸟币版本的技能、服务<br></li>
+<li>发行者提供其他人的鸟币</li>
+</ol>
+
+<h3 id="toc_11">6.财富指数是什么？</h3>
+
+<p>&mdash;&gt;财富指数越高，<mark>代表一个人越有爱</mark><br>
+在相同的债务情况下，赚到和回收的超级鸟币越多，财富指数就会越高。<br>
+当指数大于17.95时，昵称会变成红色。<br>
+具体计算方法见后文。</p>
+
+<h3 id="toc_12">7.鸟币信用是什么？</h3>
+
+<p>&mdash;&gt;鸟币信用代表了发行者的鸟币的可信程度<br>
+只要拒绝回收鸟币1次，鸟币信用就必然是中等或中等以下。<br>
+只有重新接受了所有拒绝了的回流请求时，鸟币信用才会恢复为可信。<br>
+所以<strong><mark>鸟币信用无法靠盗刷获得</mark></strong>，只能靠主动建立信任。
+具体计算方法见后文。</p>
+
+<hr>
+
+<h3 id="toc_13">以下内容推荐开发者阅读</h3>
+
+<h2 id="toc_14">如何计算财富指数？</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">超级鸟币</th>
+<th style="text-align: center">普通鸟币</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">以合一统一量化技能价值</td>
+<td style="text-align: center">以具体数值量化技能价值</td>
+</tr>
+<tr>
+<td style="text-align: center">非强制回流（回流时可以忽略）</td>
+<td style="text-align: center">强制性回流（否则影响信用值）</td>
+</tr>
+<tr>
+<td style="text-align: center">本质是真爱</td>
+<td style="text-align: center">本质是债务</td>
+</tr>
+</tbody>
+</table>
+
+<p>超级鸟币相当于普通鸟币的合一对立面,<br>
+能做到<q>合大于分</q>的人越多，人类世界越发光。  </p>
+
+<p><strong>整体来看</strong>:<br>
+<code>奴役(巨量的债务)</code>&lt;&mdash;<code>等价交换(正常的债务)</code>&mdash;&gt;<code>发光(不求回报的爱)</code>  </p>
+
+<p><strong>具体计算</strong>:<br>
+a:普通鸟币(非自己发行)收入=世界欠我的债务<br>
+b:普通鸟币(自己发行)收入=我偿还的欠世界的债务<br>
+c:普通鸟币(自己发行)支出=我欠世界的债务<br>
+d:普通鸟币(非自己发行)支出=世界偿还的欠我的债务<br>
+e:超级鸟币(非自己发行)收入=我给予世界的爱<br>
+f:超级鸟币(自己发行)收入=我对世界给予我的爱的回报<br>
+g:超级鸟币(自己发行)支出=世界给予我的爱<br>
+h:超级鸟币(非自己发行)支出＝世界对我给予世界的爱的回报  </p>
+
+<p>i:我欠世界的总债务=普通鸟币(自己发行)总支出\(=c-b&gt;=0\)<br>
+j:世界欠我的总债务=普通鸟币(非自己发行)总收入\(=a-d&gt;= 0\)<br>
+k:世界给予我的不求回报的爱=超级鸟币(自己发行)总支出\(＝g-f&gt;=0\)<br>
+l:我给予世界的不求回报的爱＝超级鸟币(非自己发行)总收入\(=e-h&gt;=0\)<br>
+m:我对世界给予我的爱总共振量\(＝f^2\)<br>
+n:世界对我给世界的爱的总共振量\(＝h^2\)  </p>
+
+<p>o:债务总量\(=i+j\)<br>
+p:发光总量<br>
+\(m+n&gt;0\)时，\(p=l * m + l * n\);<br>
+\(m+n=0\)时，\(p=l\)<br>
+\(l=0\)时，\(p=m+n\)  </p>
+
+<p>\[
+    财富指数 = p : o
+\]
+财富指数越大越好<br>
+财富指数\(=&gt;17.9491525\)时，显示红色昵称  </p>
+
+<h2 id="toc_15">如何计算鸟币信用？</h2>
+
+<p>发行出去的鸟币拥有3种状态：</p>
+
+<ol>
+<li>状态A:已回流 <code>100% = 1</code></li>
+<li>状态B:未回流 <code>61.8034% = Φ</code>
+
+<ul>
+<li>  未回流说明信任存在</li>
+</ul></li>
+<li>状态C:拒绝回收 <code>5.571294% = 1:17.9491525</code>
+
+<ul>
+<li>  鸟币回流被拒绝后，发行者信用值会降低；</li>
+<li> 若主动向债主提供服务，则可以立刻恢复正常信用值</li>
+</ul></li>
+</ol>
+
+<p><strong>数值计算：</strong><br>
+如果存在状态C: </p>
+
+<p>\[
+    鸟币信用 = ( B^2 ＋ C^2 ) : ( B + C )
+\]</p>
+
+<p>如果不存在状态C: 
+\[
+    鸟币信用 = ( A^2 + B^2 ) : ( A + B )
+\]</p>
+
+<p><strong>评级计算：</strong>  </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">评级</th>
+<th style="text-align: left">数值范围</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">极差</td>
+<td style="text-align: left">0.0%     &lt;  鸟币信用 &lt; 23.6068%</td>
+</tr>
+<tr>
+<td style="text-align: left">差等</td>
+<td style="text-align: left">23.6068% &lt;= 鸟币信用 &lt; 50.0%</td>
+</tr>
+<tr>
+<td style="text-align: left">中等</td>
+<td style="text-align: left">50.0%    &lt;= 鸟币信用 &lt; 61.8034%</td>
+</tr>
+<tr>
+<td style="text-align: left">可信</td>
+<td style="text-align: left">61.8034% &lt;= 鸟币信用 &lt; 76.3932%</td>
+</tr>
+<tr>
+<td style="text-align: left">优秀</td>
+<td style="text-align: left">76.3932% &lt;= 鸟币信用 &lt;= 100.0%</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>只要有任何一次C拒绝回收鸟币，则鸟币信用必然为中等及以下</strong>。<br>
+可信和优秀没有好坏之分，则盗刷A或B则意义不大。  </p>
+
+<p>以上<code>1/17.9491525</code>、<code>0.618034</code>、<code>0.236068</code>、<code>0.763932</code>等常数，<br>
+具体计算方式来源于更加底层的几何算法，待整理。</p>
+
+<h2 id="toc_16">技能如何定价？</h2>
+
+<p>为了帮助用户参考设定技能的价格，用户发布新技能时，<br>
+可以用当天的人民币兑换鸟币的“汇率”给自己的服务定价。  </p>
+
+<p><strong>计算方法</strong><br>
+“汇率”＝当前人民币M2与15年9月(鸟币的创世月)的人民币M2的比值。  </p>
+
+<p>例如：<br>
+2015年9月人民币M2：1359824.06万亿<br>
+2016年6月人民币M2：1490491.83万亿<br>
+当前6月的<q>汇率</q>为：1.09609167人民币＝1鸟币＝1490491.83:1359824.06<br>
+(注意：<u>此为单向定价参考，1鸟币并不能反过来＝1.096人民币</u>)</p>
+
+<p>备注：<br>
+不同国家使用当地货币的M2数据即可。<br>
+<a href="http://www.pbc.gov.cn/diaochatongjisi/116219/116319/index.html">点此查询人民币M2数据</a>（每月16号更新）</p>
+
+<h2 id="toc_17">最简易的鸟币系统</h2>
+
+<p>1.可以先参考行动派的设计 <a href="http://xingdongpai.com">www.xingdongpai.com</a> 即将上线<br>
+2.具体的设计文档，正在整理中</p>
+
+<h2 id="toc_18">在Github上提交错误和推送</h2>
+
+<p>开源协作地址 <a href="https://github.com/cooerson/niaobi">view in github</a></p>
+
+<div class="footnotes">
+<hr>
+<ol>
+
+<li id="fn1">
+<p><q>合</q>指：发光、合作、整合、正面、合一、真爱&hellip;&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+</li>
+
+<li id="fn2">
+<p><q>分</q>指：黑暗、竞争、分离、负面、分裂、恐惧与仇恨&hellip;&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+if (typeof MathJaxListener !== 'undefined') {
+  MathJax.Hub.Register.StartupHook('End', function () {
+    MathJaxListener.invokeCallbackForKey_('End');
+  });
+}
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
