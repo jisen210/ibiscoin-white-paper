@@ -534,24 +534,25 @@ f:超级鸟币(自己发行)收入=我对世界给予我的爱的回报<br>
 g:超级鸟币(自己发行)支出=世界给予我的爱<br>
 h:超级鸟币(非自己发行)支出＝世界对我给予世界的爱的回报  </p>
 
-<p>i:我欠世界的总债务=普通鸟币(自己发行)总支出\(=c-b&gt;=0\)<br>
-j:世界欠我的总债务=普通鸟币(非自己发行)总收入\(=a-d&gt;= 0\)<br>
-k:世界给予我的不求回报的爱=超级鸟币(自己发行)总支出\(＝g-f&gt;=0\)<br>
-l:我给予世界的不求回报的爱＝超级鸟币(非自己发行)总收入\(=e-h&gt;=0\)<br>
-m:我对世界给予我的爱总共振量\(＝f^2\)<br>
-n:世界对我给世界的爱的总共振量\(＝h^2\)  </p>
+<p>i:我欠世界的总债务=普通鸟币(自己发行)总支出=<code>c-b&gt;=0</code><br>
+j:世界欠我的总债务=普通鸟币(非自己发行)总收入=<code>a-d&gt;= 0</code><br>
+k:世界给予我的不求回报的爱=超级鸟币(自己发行)总支出＝<code>g-f&gt;=0</code><br>
+l:我给予世界的不求回报的爱＝超级鸟币(非自己发行)总收入=<code>e-h&gt;=0</code><br>
+m:我对世界给予我的爱总共振量＝<code>f*f</code><br>
+n:世界对我给世界的爱的总共振量＝<code>h*h</code>  </p>
 
-<p>o:债务总量\(=i+j\)<br>
+<p>o:债务总量=<code>i+j</code><br>
 p:发光总量<br>
-\(m+n&gt;0\)时，\(p=l * m + l * n\);<br>
-\(m+n=0\)时，\(p=l\)<br>
-\(l=0\)时，\(p=m+n\)  </p>
+<code>m+n&gt;0</code>时，<code>p=l*m+l*n</code>;<br>
+<code>m+n=0</code>时，<code>p=l</code><br>
+<code>l=0时</code>，<code>p=m+n</code>  </p>
 
-<p>\[
-    财富指数 = p : o
-\]
-财富指数越大越好<br>
-财富指数\(=&gt;17.9491525\)时，显示红色昵称  </p>
+<blockquote>
+<p>财富指数 = p : o</p>
+</blockquote>
+
+<p>财富指数越大越好<br>
+财富指数<code>=&gt;17.9491525</code>时，显示红色昵称  </p>
 
 <h2 id="toc_15">如何计算鸟币信用？</h2>
 
@@ -575,14 +576,15 @@ p:发光总量<br>
 <p><strong>数值计算：</strong><br>
 如果存在状态C: </p>
 
-<p>\[
-    鸟币信用 = ( B^2 ＋ C^2 ) : ( B + C )
-\]</p>
+<blockquote>
+<p>鸟币信用 = ( B<sup>2</sup> ＋ C<sup>2</sup> ) : ( B + C )</p>
+</blockquote>
 
-<p>如果不存在状态C: 
-\[
-    鸟币信用 = ( A^2 + B^2 ) : ( A + B )
-\]</p>
+<p>如果不存在状态C: </p>
+
+<blockquote>
+<p>鸟币信用 = ( A<sup>2</sup> + B<sup>2</sup> ) : ( A + B )</p>
+</blockquote>
 
 <p><strong>评级计算：</strong>  </p>
 
@@ -667,16 +669,6 @@ p:发光总量<br>
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-if (typeof MathJaxListener !== 'undefined') {
-  MathJax.Hub.Register.StartupHook('End', function () {
-    MathJaxListener.invokeCallbackForKey_('End');
-  });
-}
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
 </body>
