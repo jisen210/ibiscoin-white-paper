@@ -4,18 +4,36 @@
 <head>
 
 <meta charset="utf-8">
+<!-- coo mark -->
+<meta name="viewport" content="width=640,initial-scale=0.5,maximum-scale=0.5,minimum-scale=0.5,user-scalable=no">
 <title>鸟币开源协议</title>
 
 
 <style type="text/css">
+/*coo mark*/
 body {
-  font-family: Helvetica, arial, sans-serif;
+  font-family: Helvetica, "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 1.6;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   background-color: white;
   padding: 30px; }
+@media (max-width: 767px) {
+  body {
+    padding-right: 10 !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    padding-right: 10 !important;
+  }
+}
+@media (min-width: 1600px) {
+  body {
+    font-size: 16px;
+  }
+}
 
 body > *:first-child {
   margin-top: 0 !important; }
@@ -407,8 +425,8 @@ sup {
 
 <h3 id="toc_8">鸟币的故事</h3>
 
-<div><pre><code class="language-none">5000年前，人们使用贝壳、羽毛和石头作为交易时的信物。
-每个人都有属于自己的独一无二的贝壳、在某个小型部落里流通。
+<div><pre><code class="language-none">5000年前，人们使用贝壳、羽毛和石头作为交易信物。
+每个人都有自己独一无二的贝壳、在某个部落里流通。
 无论谁获得了你的贝壳，
 都意味着他可以拿着你的贝壳来找你办某件事情。
 比如猎杀野猪、采集浆果、种玉米等等。
@@ -622,7 +640,8 @@ p:发光总量<br>
 <p><strong>只要有任何一次C拒绝回收鸟币，则鸟币信用必然为中等及以下</strong>。<br>
 可信和优秀没有好坏之分，则盗刷A或B则意义不大。  </p>
 
-<p>以上<code>1/17.9491525</code>、<code>0.618034</code>、<code>0.236068</code>、<code>0.763932</code>等常数，<br>
+<p>以上<code>1/17.9491525</code>、<code>0.618034</code>、<br>
+<code>0.236068</code>、<code>0.763932</code>等常数，<br>
 具体计算方式来源于更加底层的几何算法，待整理。</p>
 
 <h2 id="toc_16">技能如何定价？</h2>
