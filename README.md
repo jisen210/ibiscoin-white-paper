@@ -1,4 +1,4 @@
-#鸟币开源协议 [niaobi.org](http://niaobi.org)
+#鸟币开源协议 [niaobi.org](http://niaobi.org) （待更新，2017.09.23）
 
 **鸟币开源协议**是一套完全公开源码的交易规则。  
 
