@@ -56,9 +56,9 @@
 #### 四、相关信息
 
 本文白皮书地址：[niaobi.top](niaobi.top)  
-黄皮书(整理中)：[niaobi.top-yellow-paper.md](https://github.com/cooerson/ibiscoin-white-paper/blob/gh-pages/yellow-paper.md)   
 源码和项目简介：[niaobi.org](niaobi.org)  
 iOS客户端下载：[niaobi.net](niaobi.net) (即将到来)  
+
 货币的秘密：[niaobi.org-SECRET.md](https://github.com/ibiscoin/ibis-ios/blob/master/SECRET.md)  
 如何通过货币奴役人民：[niaobi.org-SECRET2.md](https://github.com/ibiscoin/ibis-ios/blob/master/SECRET2.md)
 
