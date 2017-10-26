@@ -51,15 +51,16 @@
 17年底 即将发布iOS客户端  
 
 >一念天堂，一念地狱，人类为人类世界创造的体验，是深深被人的念头所影响的。  
-##### 总想着如何赚钱，不如想想如何一起*造钱*！
+##### 总想着如何*赚钱*，不如想想如何一起*造钱*！
 
 #### 四、相关信息
 
 本文白皮书地址：[niaobi.top](niaobi.top)  
-黄皮书（整理中）：
+黄皮书(整理中)：[niaobi.top-yellow-paper.md](https://github.com/cooerson/ibiscoin-white-paper/blob/gh-pages/yellow-paper.md)   
 源码和项目简介：[niaobi.org](niaobi.org)  
 iOS客户端下载：[niaobi.net](niaobi.net) (即将到来)  
-**一起造钱**请加微信：cooerson1  
+货币的秘密：[niaobi.org-SECRET.md](https://github.com/ibiscoin/ibis-ios/blob/master/SECRET.md)  
+如何通过货币奴役人民：[niaobi.org-SECRET2.md](https://github.com/ibiscoin/ibis-ios/blob/master/SECRET2.md)
 
 
 
