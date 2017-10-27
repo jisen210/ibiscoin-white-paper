@@ -61,9 +61,9 @@
 
 #### 四、相关信息
 
-项目地址：[niaobi.org](niaobi.org)  
-白皮书地址：[niaobi.win](niaobi.win)  
-iOS 客户端：[niaobi.net](niaobi.net)（即将到来）  
+项目地址：[niaobi.org](http://niaobi.org)  
+白皮书地址：[niaobi.win](http://niaobi.win)  
+iOS 客户端：[niaobi.net](http://niaobi.net)（即将到来）  
 黄皮书地址：[niaobi.win-yellow-paper](https://github.com/cooerson/ibiscoin-white-paper/blob/gh-pages/yellow-paper.md)（过时版本，待整理）
 
 [货币的秘密](https://github.com/ibiscoin/ibis-ios/blob/master/SECRET.md)    
